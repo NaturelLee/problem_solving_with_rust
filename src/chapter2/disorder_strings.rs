@@ -37,8 +37,11 @@ fn disorder_strings(s1: &str, s2: &str) -> bool {
         return false;
     }
 
-    let t1 = s1.chars().collect::<Vec<char>>().sort();
-    let t2 = s2.chars().collect::<Vec<char>>().sort();
+    let mut t1 = s1.chars().collect::<Vec<char>>();
+    let mut t2 = s2.chars().collect::<Vec<char>>();
+    t1.sort();
+    t2.sort();
+
     t1 == t2
 }
 
