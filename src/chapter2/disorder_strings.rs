@@ -45,6 +45,24 @@ fn disorder_strings(s1: &str, s2: &str) -> bool {
     t1 == t2
 }
 
+fn disorder_strings_char_count(s1: &str, s2: &str) -> bool {
+    if s1.len() != s2.len() {
+        return false;
+    }
+    let mut a1 = [0; 26];
+    let mut a2 = [0; 26];
+
+    for c in s1.chars() {
+        a1[c as usize - 97] += 1;
+    }
+
+    for c in s2.chars() {
+        a2[c as usize - 97] += 1;
+    }
+
+    a1 == a2
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -64,6 +82,17 @@ mod tests {
         assert!(anagram_solution("abc", "cba"));
         assert!(anagram_solution("", ""));
         assert!(anagram_solution(
+            "abcdefghijklmnopqrstuvwxyz",
+            "abcdeklmnxyzopqrstufghijvw"
+        ));
+    }
+
+    #[test]
+    fn test_disorder_strings_char_count() {
+        assert!(disorder_strings_char_count("abc", "acb"));
+        assert!(disorder_strings_char_count("abc", "cba"));
+        assert!(disorder_strings_char_count("", ""));
+        assert!(disorder_strings_char_count(
             "abcdefghijklmnopqrstuvwxyz",
             "abcdeklmnxyzopqrstufghijvw"
         ));
