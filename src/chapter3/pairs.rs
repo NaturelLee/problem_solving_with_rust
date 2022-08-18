@@ -16,8 +16,8 @@ fn pairs_checker_one(pair: &str) -> bool {
     stack.is_empty()
 }
 
-const LEFT: &'static str = "([{";
-const RIGHT: &'static str = ")]}";
+const LEFT: &str = "([{";
+const RIGHT: &str = ")]}";
 
 fn get_index(s: char, side: &str) -> Option<usize> {
     // for (i, c) in side.chars().enumerate() {
