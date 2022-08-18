@@ -47,15 +47,15 @@ mod tests {
     #[test]
     fn test_stack() {
         let mut stack = Stack::new();
-        assert_eq!(stack.is_empty(), true);
+        assert!(stack.is_empty());
         assert_eq!(stack.size(), 0);
 
         stack.push(1);
-        assert_eq!(stack.is_empty(), false);
+        assert!(!stack.is_empty());
         assert_eq!(stack.size(), 1);
         assert_eq!(stack.peek(), Some(&1));
         assert_eq!(stack.pop(), Some(1));
-        assert_eq!(stack.is_empty(), true);
+        assert!(stack.is_empty());
         assert_eq!(stack.size(), 0);
 
         stack.push(1);
@@ -68,7 +68,7 @@ mod tests {
         assert_eq!(stack.pop(), Some(2));
         assert_eq!(stack.peek(), Some(&1));
         assert_eq!(stack.pop(), Some(1));
-        assert_eq!(stack.is_empty(), true);
+        assert!(stack.is_empty());
         assert_eq!(stack.size(), 0);
     }
 }
