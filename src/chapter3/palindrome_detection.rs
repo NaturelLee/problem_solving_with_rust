@@ -34,12 +34,10 @@ fn palindrome_detection(item: &str) -> bool {
                 } else {
                     is_true = false;
                 }
+            } else if dq.size() == 1 {
+                is_true = true;
             } else {
-                if dq.size() == 1 {
-                    is_true = true;
-                } else {
-                    is_true = false;
-                }
+                is_true = false;
             }
 
             break;
