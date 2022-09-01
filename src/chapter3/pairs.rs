@@ -55,7 +55,7 @@ fn pairs_checker_two(pair: &str) -> bool {
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
     use super::*;
     #[test]
     fn test_pairs_checker_one() {
